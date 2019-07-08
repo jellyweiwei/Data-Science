@@ -14,7 +14,22 @@
 2. 安裝R&RStudio
 3. 測試RMarkdown
 #### At Home
+### 7/11
+#### In Class
+#### At Home
 
 # Week 2
+### 7/15
+#### In Class
+#### At Home
+### 7/18
+#### In Class
+#### At Home
 
 # Week 3
+### 7/22
+#### In Class
+#### At Home
+### 7/25
+#### In Class
+#### At Home
