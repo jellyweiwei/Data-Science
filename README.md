@@ -8,12 +8,12 @@
 1. [HW:0 RMarkdown html](https://jellyweiwei.github.io/Data-Science/Week%201/test.html)
 
 # Week 1
-### In Class
+### 7/8
+#### In Class
 1. 註冊Github
 2. 安裝R&RStudio
 3. 測試RMarkdown
-
-### At Home
+#### At Home
 
 # Week 2
 
