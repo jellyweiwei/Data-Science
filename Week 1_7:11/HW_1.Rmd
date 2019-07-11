@@ -1,0 +1,9 @@
+###資料科學程式設計 HW:1
+
+####趙文
+
+library(readr)
+Marry <- read.csv("結婚情形103-107.csv")
+Birth <- read.csv("婦女生育率103-107.csv")
+
+

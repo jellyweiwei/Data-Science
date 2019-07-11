@@ -5,21 +5,31 @@
  學號：40406311E
  
 # HomeWork 
-1. [HW:0 RMarkdown html](https://jellyweiwei.github.io/Data-Science/Week%201/test.html)
+1. [HW:0 Github & RMarkdown](https://jellyweiwei.github.io/Data-Science/Week%201/test.html)
+2. [HW:1 網路爬蟲 & 資料收集與清洗]()
+3. [HW:2 EDA & 資料視覺化]()
+4. [HW:3 文字與數字複合式資料分析]()
 
 # Week 1
 ### 7/8
 #### In Class
-*講義:[資料科學程式設計](https://docs.google.com/presentation/d/e/2PACX-1vRNotYqGl42khFyyjuiRYQ9cOOwNsBgGXgW-IBoIJDdiG6T2Adw2X-SO4dDGPhKqd7JlEb3ku9Hmn_7/pub?start=false&loop=false&delayms=3000&slide=id.p)
+*講義:[7/8](https://docs.google.com/presentation/d/e/2PACX-1vRNotYqGl42khFyyjuiRYQ9cOOwNsBgGXgW-IBoIJDdiG6T2Adw2X-SO4dDGPhKqd7JlEb3ku9Hmn_7/pub?start=false&loop=false&delayms=3000&slide=id.p)
 
 1. 註冊Github
 2. 安裝R&RStudio
 3. 測試RMarkdown
 
 #### At Home
+1. DataCamp: Introduction to R
+2. DataCamp: Intermediate R
 
 ### 7/11
 #### In Class
+*講義:[7/11](https://docs.google.com/presentation/d/e/2PACX-1vSx3-g4Z4LgimZKlKfk_L2gH00mDAyQo8DIugatiEXtCUI7hRNuxNtzzuobjLy-VadSpuohEsh4OeqK/pub?start=false&loop=false&delayms=3000&slide=id.p)
+
+1. 資料收集與清洗
+2. 爬蟲實作(HW:1)
+
 #### At Home
 
 # Week 2
