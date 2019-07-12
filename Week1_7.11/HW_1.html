@@ -377,12 +377,24 @@ $(document).ready(function () {
 </div>
 
 
-<p>##資料科學程式設計 HW:1<br />
-#####趙文</p>
-<p>###目錄<br />
-1. <a href="#9">設定工作位置、載入檔案</a><br />
-2. <a href="#23">整理資料</a><br />
-3. <a href="#39">完整資料</a></p>
+<h2 id="1">
+</h2>
+<div id="-hw1" class="section level2">
+<h2>資料科學程式設計 HW:1</h2>
+<div class="section level4">
+<h4>趙文</h4>
+</div>
+<div class="section level3">
+<h3>目錄</h3>
+<ol style="list-style-type: decimal">
+<li><a href="#9">設定工作位置、載入檔案</a><br />
+</li>
+<li><a href="#27">整理資料</a><br />
+</li>
+<li><a href="#49">完整資料</a></li>
+</ol>
+<h2 id="9">
+</h2>
 <blockquote>
 <p>1.設定工作位置、載入檔案</p>
 </blockquote>
@@ -450,16 +462,97 @@ Marry &lt;- read.csv(&quot;Marriage_rate103-107.csv&quot;)</code></pre>
 ## 4                                               15.90             6.80
 ## 5                                               17.54             7.57
 ## 6                                               15.44             6.43</code></pre>
+<hr />
+<h2 id="27">
+</h2>
+<blockquote>
+<p>2.整理資料</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>(1)合併兩個表格</p>
+</blockquote>
+</blockquote>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: 'dplyr'</code></pre>
+<pre><code>## The following objects are masked from 'package:stats':
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>All &lt;- cbind(Birth, Marry)</code></pre>
+<blockquote>
+<blockquote>
+<p>(2)刪除多於的列</p>
+</blockquote>
+</blockquote>
+<pre class="r"><code>All &lt;- All[,-c(13,14)]</code></pre>
+<blockquote>
+<blockquote>
+<p>(3)合併完的資料(head版)</p>
+</blockquote>
+</blockquote>
+<pre class="r"><code>head(All)</code></pre>
+<pre><code>##    year location 育齡婦女一般生育率 育齡婦女總生育率
+## 1 103年     總計                 42             1350
+## 2 103年   松山區                 38             1280
+## 3 103年   信義區                 43             1335
+## 4 103年   大安區                 39             1295
+## 5 103年   中山區                 44             1370
+## 6 103年   中正區                 41             1365
+##   X15至19歲育齡婦女生育率 X20至24歲育齡婦女生育率 X25至29歲育齡婦女生育率
+## 1                       2                      14                      60
+## 2                       -                      11                      55
+## 3                       3                      14                      54
+## 4                       2                       7                      53
+## 5                       1                      15                      61
+## 6                       0                      13                      61
+##   X30至34歲育齡婦女生育率 X35至39歲育齡婦女生育率 X40至44歲育齡婦女生育率
+## 1                     115                      67                      11
+## 2                     113                      69                       8
+## 3                     116                      66                      13
+## 4                     111                      74                      11
+## 5                     112                      72                      12
+## 6                     124                      64                      10
+##   X45至49歲育齡婦女生育率 有偶婦女一般生育率 結婚對數.總計.對.
+## 1                       1                 93             19139
+## 2                       0                 82              1326
+## 3                       1                 99              1650
+## 4                       1                 84              2132
+## 5                       1                104              1739
+## 6                       1                 85              1049
+##   結婚對數.大陸港澳配偶.對. 結婚對數.其他外籍配偶.對.
+## 1                      1535                      1225
+## 2                       106                        95
+## 3                       149                       100
+## 4                       155                       184
+## 5                       170                       135
+## 6                        86                        76
+##   結婚對數中配偶為大陸港澳及其他外籍人士之對數比率... 粗結婚率.千分比.
+## 1                                               14.42             7.10
+## 2                                               15.16             6.30
+## 3                                               15.09             7.20
+## 4                                               15.90             6.80
+## 5                                               17.54             7.57
+## 6                                               15.44             6.43</code></pre>
+<hr />
+<h2 id="49">
+</h2>
 <blockquote>
 <p>3.完整資料</p>
 </blockquote>
 <blockquote>
 <blockquote>
-<p>(1)<a href="#46">103-107生育率</a><br />
-(2)<a href="#50">103-107結婚率</a><br />
-(3)<a href="#54">合併完的表格</a></p>
+<p>(1)<a href="#56">103-107生育率</a><br />
+(2)<a href="#60">103-107結婚率</a><br />
+(3)<a href="#64">合併完的表格</a></p>
 </blockquote>
 </blockquote>
+<h2 id="56">
+</h2>
+<p><a href="#49">回完整資料</a></p>
 <pre class="r"><code>Birth</code></pre>
 <pre><code>##     year location 育齡婦女一般生育率 育齡婦女總生育率
 ## 1  103年     總計                 42             1350
@@ -725,6 +818,9 @@ Marry &lt;- read.csv(&quot;Marriage_rate103-107.csv&quot;)</code></pre>
 ## 63                       1                 75
 ## 64                       1                 81
 ## 65                       0                 75</code></pre>
+<h2 id="60">
+</h2>
+<p><a href="#49">回完整資料</a></p>
 <pre class="r"><code>Marry</code></pre>
 <pre><code>##     year location 結婚對數.總計.對. 結婚對數.大陸港澳配偶.對.
 ## 1  103年     總計             19139                      1535
@@ -924,6 +1020,9 @@ Marry &lt;- read.csv(&quot;Marriage_rate103-107.csv&quot;)</code></pre>
 ## 63                                               14.05             6.11
 ## 64                                               15.05             5.99
 ## 65                                               16.88             5.60</code></pre>
+<h2 id="64">
+</h2>
+<p><a href="#49">回完整資料</a></p>
 <pre class="r"><code>All</code></pre>
 <pre><code>##     year location 育齡婦女一般生育率 育齡婦女總生育率
 ## 1  103年     總計                 42             1350
@@ -1321,6 +1420,9 @@ Marry &lt;- read.csv(&quot;Marriage_rate103-107.csv&quot;)</code></pre>
 ## 63                                               14.05             6.11
 ## 64                                               15.05             5.99
 ## 65                                               16.88             5.60</code></pre>
+<p><a href="#1">Back To Top</a></p>
+</div>
+</div>
 
 
 
