@@ -5,8 +5,8 @@
  學號：40406311E
  
 # HomeWork 
-1. [HW:0 Github & RMarkdown](https://jellyweiwei.github.io/Data-Science/Week 1_7:8/test.html)
-2. [HW:1 網路爬蟲 & 資料收集與清洗]()
+1. [HW:0 Github & RMarkdown](https://jellyweiwei.github.io/Data-Science/Week 1_7.8/test.html)
+2. [HW:1 網路爬蟲 & 資料收集與清洗](https://jellyweiwei.github.io/Data-Science/Week 1_7.11/HW_1.html)
 3. [HW:2 EDA & 資料視覺化]()
 4. [HW:3 文字與數字複合式資料分析]()
 
