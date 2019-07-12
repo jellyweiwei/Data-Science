@@ -1,11 +1,56 @@
-###資料科學程式設計 HW:1
-####趙文
+##資料科學程式設計 HW:1  
+#####趙文  
+
+###目錄  
+1. [設定工作位置、載入檔案](#9)  
+2. [整理資料](#23)  
+3. [完整資料](#39)  
+
+>1.設定工作位置、載入檔案  
+
+>>(1)已經在numbers上稍微整理過表頭（刪除多餘空格）
+```{r}
+setwd("/Users/zhaowen/Desktop/Data-Science")
+Birth <- read.csv("Birth_rate103-107.csv")
+Marry <- read.csv("Marriage_rate103-107.csv")
+```
+>>(2)整理完的csv(head版)
+```{r}
+head(Birth)
+head(Marry)
+```
+---
+>2.整理資料
+
+>>(1)合併兩個表格
+```{r}
+library(dplyr)
+All <- cbind(Birth, Marry)
+```
+>>(2)刪除多於的列
+```{r}
+All <- All[,-c(13,14)]
+```
+>>(3)合併完的資料(head版)
+```{r}
+head(All)
+```
+---
+>3.完整資料
+
+>>(1)[103-107生育率](#46)  
+>>(2)[103-107結婚率](#50)  
+>>(3)[合併完的表格](#54)  
 
 ```{r}
+Birth
+```
 
-#library(readr)
-Marry <- read.csv("結婚情形103-107.csv")
-Birth <- read.csv("婦女生育率103-107.csv")
-
+```{r}
 Marry
 ```
+
+```{r}
+All
+```
+
