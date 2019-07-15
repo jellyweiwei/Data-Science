@@ -37,7 +37,7 @@
 # Week 2
 ### 7/15
 #### In Class
-*講義:[7/15](https://docs.google.com/presentation/d/e/2PACX-1vSx3-g4Z4LgimZKlKfk_L2gH00mDAyQo8DIugatiEXtCUI7hRNuxNtzzuobjLy-VadSpuohEsh4OeqK/pub?start=false&loop=false&delayms=3000&slide=id.p)  
+*講義:[7/15](https://docs.google.com/presentation/d/e/2PACX-1vTvdUOo9w0RFYs8NBIr7svtShHutVeipc9zAMFJN8Bq2LzVCwBpvEO5ChIfaoRjspZDAJSMbJOjWBL8/pub?start=false&loop=false&delayms=3000&slide=id.p)  
 
 #### At Home
 ### 7/18
