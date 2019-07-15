@@ -1,0 +1,123 @@
+># **Search Data**
+>>## load data
+```{r}
+setwd("/Users/zhaowen/Desktop/Data-Science")
+Birth <- read.csv("Birth_rate103-107.csv")
+Marry <- read.csv("Marriage_rate103-107.csv")
+```
+
+
+>>## see origin data
+```{r}
+head(Birth,2)
+head(Marry,2)
+```
+
+
+>>## install packages dplyr
+```{r}
+library(dplyr)
+All <- cbind(Birth, Marry)
+```
+
+
+>>## tidy Data
+```{r}
+All <- All[,-c(13,14)]
+```
+
+
+>>## see All
+```{r}
+head(All)
+```
+
+
+
+
+># **1.Make a map**
+>>## (1)input shape files
+```{r}
+setwd("/Users/zhaowen/Desktop/Data-Science/mapdata201906180922")
+library(maptools)
+Ad.shp <- readShapeSpatial("TOWN_MOI_1080617.shp")
+```
+
+
+>>## (2)select administration in taipei
+```{r}
+Ad.taipei <- Ad.shp[which(Ad.shp@data$COUNTYNAME == "臺北市"), ]
+names(Ad.taipei)
+head(Ad.taipei,2)
+print(Ad.taipei$TOWNNAME)
+```
+
+
+>>## (3)create data plot on map
+```{r}
+Ad.num <- length(Ad.taipei$TOWNNAME)
+mydata <- data.frame(Ad.taipei$TOWNNAME, id=(1:Ad.num), prevalence = rnorm(Ad.num, 55, 5))
+head(mydata)
+```
+
+
+>>## (4)fortify shapefile to get into dataframe
+```{r}
+library(ggplot2)
+Ad.taipei.df <- fortify(Ad.taipei, region = "TOWNID")
+class(Ad.taipei.df)
+head(Ad.taipei.df,12)
+```
+
+
+>>## (5)merge to map & data gether
+
+
+>>## (6)basic plot
+```{r}
+
+```
+
+
+
+># **2.Bar Chart Test**
+>>## (1)data in
+```{r}
+library(dplyr)
+birth_bar <- All %>%
+  select(year, location, 育齡婦女一般生育率) %>%
+  filter(year %in% c("107年"))
+```
+
+
+>>## (2)bar chart
+```{r}
+ggplot(data = birth_bar,
+       aes(x=location,
+           y=育齡婦女一般生育率,
+           fill="育齡婦女一般生育率"))+
+  geom_bar(stat="identity")
+```
+
+
+
+># **3.Line Chart Test**
+>>## (1)data in
+```{r}
+library(ggplot2)
+birth_line <- All %>%
+  select(year, location, 育齡婦女一般生育率) %>%
+  filter(location %in% c("總計"))
+head(birth_line)
+```
+
+
+>>## (2)line chart
+```{r}
+ggplot(data = birth_line,
+       aes(x= "year", 
+           y= "育齡婦女一般生育率",
+           group=1))+
+  geom_line()+
+  geom_point()
+```
