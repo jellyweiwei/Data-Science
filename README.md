@@ -39,9 +39,18 @@
 #### In Class
 *講義:[7/15](https://docs.google.com/presentation/d/e/2PACX-1vTvdUOo9w0RFYs8NBIr7svtShHutVeipc9zAMFJN8Bq2LzVCwBpvEO5ChIfaoRjspZDAJSMbJOjWBL8/pub?start=false&loop=false&delayms=3000&slide=id.p)  
 
+1. 整理資料
+2. 資料圖像化實作
+
 #### At Home
+1. 完成HW:2
+2. 練習使用ggplot2
+3. 練習使用GISTools
+
 ### 7/18
 #### In Class
+*講義:[7/18](https://docs.google.com/presentation/d/e/2PACX-1vRGRc4TLe_rffXaSlWPU7rWZx4fQ7HxMcwHXbTAxfWh6xwlBtM9rxA1rfHI5eM-2GaxkMGC2NMSnUj5/pub?start=false&loop=false&delayms=3000&slide=id.p)  
+
 #### At Home
 
 # Week 3
