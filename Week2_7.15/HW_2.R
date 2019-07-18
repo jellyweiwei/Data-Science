@@ -47,7 +47,6 @@ Ad.shp <- readShapeSpatial("TOWN_MOI_1080617.shp")
 
 Ad.taipei <- Ad.shp[which(Ad.shp@data$COUNTYNAME == "臺北市"), ]
 names(Ad.taipei)
-head(Ad.taipei)
 print(Ad.taipei$TOWNNAME)
 
 
@@ -69,12 +68,14 @@ head(Ad.taipei.df,12)
 
 
 ## 5.merge to map & data gether
-
+merged_data <- merge(mydata, Ad.taipei.df, by="id", all.x=TRUE)
+head(merged_data)
+final.plot <- merged_data[order(merged_data$), ]
 
 ## 6.basic plot
 
 ggplot()+
-  geom_polygon(data = ,
+  geom_polygon(data = final.plot,
                aes(x = long, y = lat, group = group, fill = prevalence),
                color = "black", size = 0.25) +
   coord_map()

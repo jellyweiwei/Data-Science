@@ -1,50 +1,80 @@
-># **Search Data**
->>## load data
+---
+title: 資料圖像化
+output: html_document
+author: 趙文
+---
+<h2 id = 0></h2>
+# 目錄
+一、 [Search Data](#1)  
+二、 [Make a map](#2)  
+三、 [Bar Chart Test](#3) 
+四、 [Line Chart Test](#4)
+
+<h2 id = 1></h2>
+># **一、Search Data**
+
+1. [load data](#1.1)
+2. [see origin data](#1.2)
+3. [install packages dplyr](#1.3)
+4. [tidy Data](#1.4)
+5. [see All](#1.5)
+
+<h2 id = 1.1></h2>
+>>## 1. load data
 ```{r}
 setwd("/Users/zhaowen/Desktop/Data-Science")
 Birth <- read.csv("Birth_rate103-107.csv")
 Marry <- read.csv("Marriage_rate103-107.csv")
 ```
 
-
->>## see origin data
+<h2 id = 1.2></h2>
+>>## 2. see origin data
 ```{r}
 head(Birth,2)
 head(Marry,2)
 ```
 
-
->>## install packages dplyr
+<h2 id = 1.3></h2>
+>>## 3. install packages dplyr
 ```{r}
 library(dplyr)
 All <- cbind(Birth, Marry)
 ```
 
-
->>## tidy Data
+<h2 id = 1.4></h2>
+>>## 4. tidy Data
 ```{r}
 All <- All[,-c(13,14)]
 ```
 
-
->>## see All
+<h2 id = 1.5></h2>
+>>## 5. see All
 ```{r}
 head(All)
 ```
 
 
 
+<h2 id = 2></h2>
+># **二、Make a map**
 
-># **1.Make a map**
->>## (1)input shape files
+1. [input shape files](#2.1)
+2. [select administration in taipei](#2.2)
+3. [create data plot on map](#2.3)
+4. [fortify shapefile to get into dataframe](#2.4)
+5. [merge to map & data gether](#2.5)
+6. [basic plot](#2.6)
+
+<h2 id = 2.1></h2>
+>>## 1. input shape files
 ```{r}
 setwd("/Users/zhaowen/Desktop/Data-Science/mapdata201906180922")
 library(maptools)
 Ad.shp <- readShapeSpatial("TOWN_MOI_1080617.shp")
 ```
 
-
->>## (2)select administration in taipei
+<h2 id = 2.2></h2>
+>>## 2. select administration in taipei
 ```{r}
 Ad.taipei <- Ad.shp[which(Ad.shp@data$COUNTYNAME == "臺北市"), ]
 names(Ad.taipei)
@@ -52,36 +82,42 @@ head(Ad.taipei,2)
 print(Ad.taipei$TOWNNAME)
 ```
 
-
->>## (3)create data plot on map
+<h2 id = 2.3></h2>
+>>## 3. create data plot on map
 ```{r}
 Ad.num <- length(Ad.taipei$TOWNNAME)
 mydata <- data.frame(Ad.taipei$TOWNNAME, id=(1:Ad.num), prevalence = rnorm(Ad.num, 55, 5))
 head(mydata)
 ```
 
-
->>## (4)fortify shapefile to get into dataframe
+<h2 id = 2.4></h2>
+>>## 4. fortify shapefile to get into dataframe
 ```{r}
 library(ggplot2)
 Ad.taipei.df <- fortify(Ad.taipei, region = "TOWNID")
 class(Ad.taipei.df)
 head(Ad.taipei.df,12)
 ```
+到這一步開始有問題，嘗試過後還沒有辦法解決（努力中⋯⋯）
 
+<h2 id = 2.5></h2>
+>>## 5. merge to map & data gether
 
->>## (5)merge to map & data gether
-
-
->>## (6)basic plot
+<h2 id = 2.6></h2>
+>>## 6. basic plot
 ```{r}
 
 ```
 
 
+<h2 id = 3></h2>
+># **三、Bar Chart Test**
 
-># **2.Bar Chart Test**
->>## (1)data in
+1. [data in](#3.1)
+2. [bar chart](#3.2)
+
+<h2 id = 3.1></h2>
+>>## 1. data in
 ```{r}
 library(dplyr)
 birth_bar <- All %>%
@@ -89,8 +125,8 @@ birth_bar <- All %>%
   filter(year %in% c("107年"))
 ```
 
-
->>## (2)bar chart
+<h2 id = 3.2></h2>
+>>## 2. bar chart
 ```{r}
 ggplot(data = birth_bar,
        aes(x=location,
@@ -100,9 +136,14 @@ ggplot(data = birth_bar,
 ```
 
 
+<h2 id = 4></h2>
+># **四、Line Chart Test**
 
-># **3.Line Chart Test**
->>## (1)data in
+1. [data in](#4.1)
+2. [line chart](#4.2)
+
+<h2 id = 4.1></h2>
+>>## 1. data in
 ```{r}
 library(ggplot2)
 birth_line <- All %>%
@@ -111,8 +152,8 @@ birth_line <- All %>%
 head(birth_line)
 ```
 
-
->>## (2)line chart
+<h2 id = 4.2></h2>
+>>## 2. line chart
 ```{r}
 ggplot(data = birth_line,
        aes(x= "year", 
@@ -121,3 +162,5 @@ ggplot(data = birth_line,
   geom_line()+
   geom_point()
 ```
+
+[back to top](#0)
