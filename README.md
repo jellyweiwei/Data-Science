@@ -4,7 +4,7 @@
  學系：人類發展與家庭學系營養與科學教育組大四<br>
  學號：40406311E
  
-# HomeWork 
+># HomeWork 
 1. [HW:0 Github & RMarkdown](https://jellyweiwei.github.io/Data-Science/Week1_7.8/test.html)
 2. [HW:1 網路爬蟲 & 資料收集與清洗](https://jellyweiwei.github.io/Data-Science/Week1_7.11/HW_1.html)
 3. [HW:2 EDA & 資料視覺化](https://jellyweiwei.github.io/Data-Science/Week2_7.15/HW_2.html)
@@ -31,7 +31,7 @@
 2. 爬蟲實作(HW:1)  
 
 #### At Home
-1. 完成HW:1
+1. 完成[HW:1]((https://jellyweiwei.github.io/Data-Science/Week1_7.11/HW_1.html))
 2. DataCamp: Intermediate R  
 
 # Week 2
@@ -43,7 +43,7 @@
 2. 資料圖像化實作
 
 #### At Home
-1. 完成HW:2
+1. 完成[HW:2]((https://jellyweiwei.github.io/Data-Science/Week2_7.15/HW_2.html))
 2. 練習使用ggplot2
 3. 練習使用GISTools
 
