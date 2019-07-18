@@ -78,7 +78,7 @@ Ad.shp <- readShapeSpatial("TOWN_MOI_1080617.shp")
 ```{r}
 Ad.taipei <- Ad.shp[which(Ad.shp@data$COUNTYNAME == "臺北市"), ]
 names(Ad.taipei)
-head(Ad.taipei,2)
+head(Ad.taipei@data)
 print(Ad.taipei$TOWNNAME)
 ```
 
@@ -134,6 +134,7 @@ ggplot(data = birth_bar,
            fill="育齡婦女一般生育率"))+
   geom_bar(stat="identity")
 ```
+表頭好像無法變成中文，嘗試解決中⋯⋯
 
 
 <h2 id = 4></h2>
@@ -151,6 +152,8 @@ birth_line <- All %>%
   filter(location %in% c("總計"))
 head(birth_line)
 ```
+沒有成功做出年份的總計生育率⋯⋯<br>
+導致下方只有一個點
 
 <h2 id = 4.2></h2>
 >>## 2. line chart
@@ -162,5 +165,6 @@ ggplot(data = birth_line,
   geom_line()+
   geom_point()
 ```
+
 
 [back to top](#0)
