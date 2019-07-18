@@ -406,7 +406,7 @@ $(document).ready(function () {
 <h2 id="load-data">1. load data</h2>
 </blockquote>
 </blockquote>
-<pre class="r"><code>setwd(&quot;/Users/zhaowen/Desktop/Data-Science&quot;)
+<pre class="r"><code>setwd(&quot;/Users/zhaowen/Desktop/Data-Science/data&quot;)
 Birth &lt;- read.csv(&quot;Birth_rate103-107.csv&quot;)
 Marry &lt;- read.csv(&quot;Marriage_rate103-107.csv&quot;)</code></pre>
 <h2 id="1.2">
@@ -534,7 +534,7 @@ Marry &lt;- read.csv(&quot;Marriage_rate103-107.csv&quot;)</code></pre>
 <h2 id="input-shape-files">1. input shape files</h2>
 </blockquote>
 </blockquote>
-<pre class="r"><code>setwd(&quot;/Users/zhaowen/Desktop/Data-Science/mapdata201906180922&quot;)
+<pre class="r"><code>setwd(&quot;/Users/zhaowen/Desktop/Data-Science/data&quot;)
 library(maptools)</code></pre>
 <pre><code>## Loading required package: sp</code></pre>
 <pre><code>## Checking rgeos availability: TRUE</code></pre>
@@ -582,12 +582,12 @@ names(Ad.taipei)</code></pre>
 mydata &lt;- data.frame(Ad.taipei$TOWNNAME, id=(1:Ad.num), prevalence = rnorm(Ad.num, 55, 5))
 head(mydata)</code></pre>
 <pre><code>##   Ad.taipei.TOWNNAME id prevalence
-## 1             大安區  1   54.29366
-## 2             文山區  2   53.27368
-## 3             信義區  3   55.32319
-## 4             萬華區  4   60.03115
-## 5             中正區  5   48.69268
-## 6             南港區  6   51.64059</code></pre>
+## 1             大安區  1   52.51882
+## 2             文山區  2   59.62346
+## 3             信義區  3   57.82421
+## 4             萬華區  4   45.22997
+## 5             中正區  5   51.21835
+## 6             南港區  6   58.36415</code></pre>
 <h2 id="2.4">
 </h2>
 <blockquote>

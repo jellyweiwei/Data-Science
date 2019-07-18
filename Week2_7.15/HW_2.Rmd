@@ -22,7 +22,7 @@ author: 趙文
 <h2 id = 1.1></h2>
 >>## 1. load data
 ```{r}
-setwd("/Users/zhaowen/Desktop/Data-Science")
+setwd("/Users/zhaowen/Desktop/Data-Science/data")
 Birth <- read.csv("Birth_rate103-107.csv")
 Marry <- read.csv("Marriage_rate103-107.csv")
 ```
@@ -68,7 +68,7 @@ head(All)
 <h2 id = 2.1></h2>
 >>## 1. input shape files
 ```{r}
-setwd("/Users/zhaowen/Desktop/Data-Science/mapdata201906180922")
+setwd("/Users/zhaowen/Desktop/Data-Science/data")
 library(maptools)
 Ad.shp <- readShapeSpatial("TOWN_MOI_1080617.shp")
 ```

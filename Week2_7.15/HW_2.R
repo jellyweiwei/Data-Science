@@ -1,7 +1,7 @@
 # **Search Data**
 ## 1.load data
 
-setwd("/Users/zhaowen/Desktop/Data-Science")
+setwd("/Users/zhaowen/Desktop/Data-Science/data")
 Birth <- read.csv("Birth_rate103-107.csv")
 Marry <- read.csv("Marriage_rate103-107.csv")
 
@@ -37,7 +37,7 @@ head(All)
 #**Make a Map**
 ## 1.input shape files
 
-setwd("/Users/zhaowen/Desktop/Data-Science/mapdata201906180922")
+setwd("/Users/zhaowen/Desktop/Data-Science/data")
 library(maptools)
 Ad.shp <- readShapeSpatial("TOWN_MOI_1080617.shp")
 
