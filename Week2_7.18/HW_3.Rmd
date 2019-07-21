@@ -1,25 +1,49 @@
+---
+title: "文字與數字複合式資料分析"
+author: "趙文"
+date: "7/22/2019"
+output: html_document
+---
+<h2 id = 0></h2>
+# 目錄
+
+1. [收集一份文本](#1)<br>
+2. [文字清洗](#2)<br>
+3. [斷詞](#3)<br>
+4. [去除停用字](#4)<br>
+5. [製作tdm](#5)<br>
+6. [詞的出現頻率（Bar charts）](#6)<br>
+7. [製作文字雲](#7)<br>
+
+<h2 id = 1></h2>
 # 1. 收集一份文本
-## 資料來源：http://www.txttw.com/forum.php?mod=viewthread&tid=62698&highlight=禁咒師
+資料來源：http://www.txttw.com/forum.php?mod=viewthread&tid=62698&highlight=禁咒師
+```{r}
 library(tm)
 seba <- VCorpus(DirSource(directory ="/Users/zhaowen/Desktop/Data-Science/data/txt",encoding = "UTF-8"))
 inspect(seba[1:2])
 identical(seba[[1]], seba[["禁咒師.txt"]])
+```
 
-
+<h2 id = 2></h2>
 # 2. 文字清洗
-seba <- tm_map(seba, stripWhitespace)
-seba <- tm_map(seba, removeNumbers)
-seba <- tm_map(seba, removePunctuation)
-seba <- tm_map(seba, tolower)
-seba <- tm_map(seba, function(word) {
+```{r}
+seba <- tm_map(seba, stripWhitespace) #去空白
+seba <- tm_map(seba, removeNumbers) #去數字
+seba <- tm_map(seba, removePunctuation) #去標點符號
+seba <- tm_map(seba, tolower) #大小寫轉換
+seba <- tm_map(seba, function(word) { #去英數字
   gsub("[A-Za-z0-9]", "", word)
 })
+```
 
+<h2 id = 3></h2>
 # 3. 斷詞
+```{r}
 library(tmcn)
-words <- c("明峰", "蕙娘", "英俊", "麒麟", "末日")
+words <- c("明峰", "蕙娘", "英俊", "麒麟", "末日") #自定義詞
 insertWords(words)
-seba <- tm_map(seba, segmentCN, nature = TRUE) 
+seba <- tm_map(seba, segmentCN, nature = TRUE) # 斷詞
 
 seba <- tm_map(seba, function(sentence) {
   noun <- lapply(sentence, function(w) {
@@ -27,7 +51,11 @@ seba <- tm_map(seba, function(sentence) {
   })
   unlist(noun)
 })
+```
 
+<h2 id = 4></h2>
+# 4.去除停用字
+```{r}
 myStopwords <- c(stopwordsCN(), "著", "、") #自定義庭用詞
 seba <- tm_map(seba, removeWords, myStopwords)
 
@@ -39,16 +67,20 @@ for(i in seq(seba)){
 
 seba <- tm_map(seba, tolower)
 seba <- tm_map(seba, PlainTextDocument)
+```
 
-# 4. 製作tdm
+<h2 id = 5></h2>
+# 5. 製作tdm
+```{r}
 tdm <- TermDocumentMatrix(seba, control = list(wordLengths = c(2, Inf)))
 m1 <- as.matrix(tdm)
 v <- sort(rowSums(m1), decreasing = TRUE)
 d <- data.frame(word = names(v), freq = v)
+```
 
-
-
-# 4. 詞的出現頻率（Bar charts）
+<h2 id = 6></h2>
+# 6. 詞的出現頻率（Bar charts）
+```{r}
 library(dplyr)
 df <- filter(d, freq >= 100)
 library(RColorBrewer)
@@ -59,8 +91,11 @@ ggplot(data = df, mapping = aes(x = reorder(word, freq), y = freq, fill= freq)) 
   theme(text=element_text(family="黑體-繁 中黑", size=10))+
   labs(x="文字", y="出現次數")+
   coord_flip()
+```
 
-# 5. 製作文字雲
+<h2 id = 7></h2>
+# 7. 製作文字雲
+```{r}
 library(wordcloud)
 m1 <- as.matrix(tdm)
 v <- sort(rowSums(m1), decreasing = TRUE)
@@ -68,4 +103,6 @@ d <- data.frame(word = names(v), freq = v)
 par(family=("Heiti TC Light"))
 wordcloud(d$word, d$freq, min.freq = 50, random.order = F, ordered.colors = F, 
           colors = rainbow(length(row.names(m1))))
+```
 
+[Back to top](#0)
