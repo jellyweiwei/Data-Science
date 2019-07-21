@@ -8,7 +8,7 @@
 1. [HW:0 Github & RMarkdown](https://jellyweiwei.github.io/Data-Science/Week1_7.8/test.html)
 2. [HW:1 網路爬蟲 & 資料收集與清洗](https://jellyweiwei.github.io/Data-Science/Week1_7.11/HW_1.html)
 3. [HW:2 EDA & 資料視覺化](https://jellyweiwei.github.io/Data-Science/Week2_7.15/HW_2.html)
-4. [HW:3 文字與數字複合式資料分析]()
+4. [HW:3 文字與數字複合式資料分析](https://jellyweiwei.github.io/Data-Science/Week2_7.18/HW_3.html)
 
 # Week 1
 ### 7/8
@@ -51,11 +51,20 @@
 #### In Class
 *講義:[7/18](https://docs.google.com/presentation/d/e/2PACX-1vRGRc4TLe_rffXaSlWPU7rWZx4fQ7HxMcwHXbTAxfWh6xwlBtM9rxA1rfHI5eM-2GaxkMGC2NMSnUj5/pub?start=false&loop=false&delayms=3000&slide=id.p)  
 
+1. 文字清洗
+2. 資料查詢
+3. 文字雲實作
+
 #### At Home
+1. 完成[HW:3](https://jellyweiwei.github.io/Data-Science/Week2_7.18/HW_3.html)
+2. 練習使用tm package
+3. 練習使用ggplot2
 
 # Week 3
 ### 7/22
 #### In Class
+*講義:[7/22](https://docs.google.com/presentation/d/e/2PACX-1vSzngDJuRE8e5nuP_f8muXnSXuKQPVqmVCT2y41lmqnBw6btgm1kC8OL9WH7FjbiFm4kIKkdWxu8as7/pub?start=false&loop=false&delayms=3000&slide=id.p)
+
 #### At Home
 ### 7/25
 #### In Class
