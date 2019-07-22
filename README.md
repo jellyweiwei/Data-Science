@@ -65,6 +65,9 @@
 #### In Class
 *講義:[7/22](https://docs.google.com/presentation/d/e/2PACX-1vSzngDJuRE8e5nuP_f8muXnSXuKQPVqmVCT2y41lmqnBw6btgm1kC8OL9WH7FjbiFm4kIKkdWxu8as7/pub?start=false&loop=false&delayms=3000&slide=id.p)
 
+1. 討論期末專題
+2. 蒐集資料來源
+
 #### At Home
 ### 7/25
 #### In Class
