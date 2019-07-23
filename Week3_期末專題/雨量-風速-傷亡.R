@@ -21,6 +21,7 @@ levels(hurt$name)[63] <- "山竹"
 
 #改col名稱
 colnames(r_t)[2]="name"
+colnames(r_t)[4]="strength"
 
 rt.hurt <- merge(r_t, hurt, by="name")
 rh <- arrange(rt.hurt, X)
@@ -35,9 +36,16 @@ rh2$cas.total <- as.numeric(rh2$cas.total)
 ##整理路徑
 colnames(sp1)[1]="name"
 colnames(sp1)[2]="path"
-sp2 <- select(sp1, "name", "path")
+colnames(sp1)[3]="date"
 
+sp2 <- select(sp1, "name", "path", "date")
 
+rt.hurt1 <- merge(sp2, rh2, by="name")
+rth <- arrange(rt.hurt1, X)
+
+rth1 <- rth[-c(2, 3, 7, 8, 10, 11, 14, 17, 21, 23, 26, 34, 35, 40, 45, 47, 48, 51, 55, 56, 58, 61, 65, 66, 70, 74, 82, 86, 90, 91, 94, 97, 100, 102, 103, 109, 111, 113, 118, 124, 129, 133, 135, 137),]
+
+rth2 <- select(rth1, name, path, strength, wind, tart_time:level_1, cas.total:"equi.其他" )
 
 # 畫圖
 library(ggplot2)
