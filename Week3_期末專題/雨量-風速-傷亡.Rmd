@@ -93,6 +93,7 @@ ggplot(data = rth2) +
   geom_density(aes(x = average), fill = "#003366") 
 
 ```
+<br>
 均雨量集中在1000左右。
 
 ### 風速
@@ -103,6 +104,7 @@ ggplot(data = rth2)+
   geom_vline(aes(xintercept=33), colour="#990000", linetype="dashed") #風速33m/s
 
 ```
+<br>
 大多數最大風速會超過33m/s（放假標準）。
 
 ## 二變量
@@ -117,6 +119,7 @@ ggplot(rth2, aes(x = average, y = wind)) + #scattperplot
   geom_hline(aes(yintercept=33), colour="#990000", linetype="dashed") #風速33m/s
   
 ```
+<br>
 雨量與風速的關係成正比（但是關係不明顯）。
 
 ### 路徑
@@ -154,6 +157,7 @@ qplot(average, wind, data = rth2, color = strength, size = cas.total, alpha = I(
   geom_vline(aes(xintercept=1000), colour="#990000", linetype="dashed")
 
 ```
+<br>
 由圖可看出，大部分的傷亡都在風速大於33m/s；雨量1000以後傷亡人數密度增加。
 
 ### 路徑-風速-傷亡
@@ -163,6 +167,7 @@ qplot(path, wind, data = rth2, color = strength, size = cas.total, alpha = I(0.7
   geom_hline(aes(yintercept=33), colour="#990000", linetype="dashed") #風速33m/s
 
 ```
+<br>
 由圖可知，會造成較大風速與傷亡的路徑為3。
 
 ### 高於平均雨量-風速-傷亡
@@ -171,6 +176,7 @@ qplot(path, wind, data = rth2, color = strength, size = cas.total, alpha = I(0.7
 qplot(better_than_average, wind, data = rth2, color = strength, size = cas.total, alpha = I(0.7))#scattperplot
 
 ```
+<br>
 
 ### 警戒值level1-風速-傷亡
 ```{r}
@@ -178,6 +184,7 @@ qplot(better_than_average, wind, data = rth2, color = strength, size = cas.total
 qplot(level_1, wind, data = rth2, color = strength, size = cas.total, alpha = I(0.7))#scattperplot
 
 ```
+<br>
 
 ### 警戒值level2-風速-傷亡
 ```{r}
@@ -185,6 +192,7 @@ qplot(level_1, wind, data = rth2, color = strength, size = cas.total, alpha = I(
 qplot(level_2, wind, data = rh2, color = strength, size = cas.total, alpha = I(0.7))
 
 ```
+<br>
 
 
   
