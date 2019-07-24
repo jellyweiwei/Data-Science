@@ -93,8 +93,7 @@ ggplot(data = rth2) +
   geom_density(aes(x = average), fill = "#003366") 
 
 ```
-<br>
-均雨量集中在1000左右。
+1. 均雨量集中在1000左右。
 
 ### 風速
 ```{r}
