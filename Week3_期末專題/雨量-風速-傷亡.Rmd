@@ -1,4 +1,12 @@
+---
+title: "雨量-風速-傷亡"
+author: "趙文"
+date: "7/24/2019"
+output: html_document
+---
 # 檔案匯入
+```{r}
+
 getwd()
 setwd("/Users/zhaowen/Desktop/Data-Science/Week3_期末專題")
 
@@ -13,13 +21,20 @@ sp <- read_excel("/Users/zhaowen/Desktop/Data-Science/Week3_期末專題/2000.xl
 
 sp1 <- as.data.frame(sp)
 
+```
 
 # 總計df
+```{r}
+
 library(dplyr)
 
 levels(hurt$name)[63] <- "山竹"
 
-#改col名稱
+```
+
+## 改col名稱
+```{r}
+
 colnames(r_t)[2]="name"
 colnames(r_t)[4]="strength"
 
@@ -38,7 +53,11 @@ colnames(rh2)[5]="wind"
 
 rh2$cas.total <- as.numeric(rh2$cas.total)
 
+```
+
 ##整理路徑
+```{r}
+
 colnames(sp1)[1]="name"
 colnames(sp1)[2]="path"
 colnames(sp1)[3]="date"
@@ -57,54 +76,115 @@ rth1 <- rth[-c(2, 3, 7, 8, 10, 11, 14, 17, 21, 23, 26, 34, 35, 40, 45, 47, 48, 5
 
 rth2 <- select(rth1, name, path, strength, wind, tart_time:level_1, cas.total:"equi.其他" )
 
+```
+
 # 畫圖
+```{r}
+
 library(ggplot2)
+
+```
 
 ## 一變量
 ### 雨量
-ggplot(data = rth2) + 
+```{r}
+
+ggplot(data = rth2) +
   geom_density(aes(x = average), fill = "#003366") 
 
+```
+均雨量集中在1000左右。
+
 ### 風速
-ggplot(data = rth2) + 
-  geom_density(aes(x = wind), fill = "#003366") +
+```{r}
+
+ggplot(data = rth2)+
+  geom_density(aes(x = wind), fill = "#003366")+
   geom_vline(aes(xintercept=33), colour="#990000", linetype="dashed") #風速33m/s
 
+```
+大多數最大風速會超過33m/s（放假標準）。
+
 ## 二變量
+### 雨量
 #### 雨量-風速
+```{r}
+
 ggplot(rth2, aes(x = average, y = wind)) + #scattperplot
   geom_point() + 
   stat_smooth(method=lm, level=0.99) + #回歸直線
   geom_rug()+ #邊際地毯
   geom_hline(aes(yintercept=33), colour="#990000", linetype="dashed") #風速33m/s
+  
+```
+雨量與風速的關係成正比（但是關係不明顯）。
 
 ### 路徑
 #### 路徑-風速
+```{r}
+
 ggplot(rth2, aes(x=path, y=wind))+ #boxplot
   geom_boxplot(aes(group=path)) +
   geom_hline(aes(yintercept=33), colour="#990000", linetype="dashed") #風速33m/s
 
+```
+可知路徑1、2、3、special會造成較大的風速，路徑8造成較小風速。
+
 #### 路徑-雨量
+```{r}
+
 ggplot(rth2, aes(x=path, y=average))+ geom_boxplot(aes(group=path)) #boxplot
 
+```
+
 #### 路徑-傷亡
+```{r}
+
 ggplot(rth2, aes(x=path, y=cas.total))+ geom_boxplot(aes(group=path)) #boxplot
 
+```
+由圖可知，造成平均最大傷亡的為路徑3。
+
 ## 三變量
-### 雨量平均-風速-傷亡
+### 雨量平均-風速-傷亡(颱風強度)
+```{r}
+
 qplot(average, wind, data = rth2, color = strength, size = cas.total, alpha = I(0.7))+ #scattperplot
   geom_hline(aes(yintercept=33), colour="#990000", linetype="dashed")+ #風速33m/s
   geom_vline(aes(xintercept=1000), colour="#990000", linetype="dashed")
 
+```
+由圖可看出，大部分的傷亡都在風速大於33m/s；雨量1000以後傷亡人數密度增加。
+
 ### 路徑-風速-傷亡
+```{r}
+
 qplot(path, wind, data = rth2, color = strength, size = cas.total, alpha = I(0.7)) + #scattperplot
   geom_hline(aes(yintercept=33), colour="#990000", linetype="dashed") #風速33m/s
 
+```
+由圖可知，會造成較大風速與傷亡的路徑為3。
+
 ### 高於平均雨量-風速-傷亡
+```{r}
+
 qplot(better_than_average, wind, data = rth2, color = strength, size = cas.total, alpha = I(0.7))#scattperplot
 
+```
+
 ### 警戒值level1-風速-傷亡
+```{r}
+
 qplot(level_1, wind, data = rth2, color = strength, size = cas.total, alpha = I(0.7))#scattperplot
 
+```
+
 ### 警戒值level2-風速-傷亡
-qplot(level_2, wind, data = rh2, color = strength, size = cas.total, alpha = I(0.7))#scattperplot
+```{r}
+
+qplot(level_2, wind, data = rh2, color = strength, size = cas.total, alpha = I(0.7))
+
+```
+
+
+  
