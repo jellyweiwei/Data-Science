@@ -9,6 +9,7 @@
 2. [HW:1 網路爬蟲 & 資料收集與清洗](https://jellyweiwei.github.io/Data-Science/Week1_7.11/HW_1.html)
 3. [HW:2 EDA & 資料視覺化](https://jellyweiwei.github.io/Data-Science/Week2_7.15/HW_2.html)
 4. [HW:3 文字與數字複合式資料分析](https://jellyweiwei.github.io/Data-Science/Week2_7.18/HW_3.html)
+5. [期末專題：颱風對台灣之影響](https://docs.google.com/presentation/d/e/2PACX-1vRCEsouI3Tj-W1DlOsu0c7kE5o-5lRUdUJfzLfdN-N7uvhAP-qZphjVwXLqw7_7T6Hn90Uh0VyLndAh/pub?start=false&loop=false&delayms=3000)
 
 # Week 1
 ### 7/8
@@ -69,6 +70,14 @@
 2. 蒐集資料來源
 
 #### At Home
+1. 完成 [雨量-風速-傷亡整理](https://jellyweiwei.github.io/Data-Science/Week3_期末專題/雨量-風速-傷亡.html)
+2. 完成 [期末專題：颱風對台灣之影響](https://docs.google.com/presentation/d/e/2PACX-1vRCEsouI3Tj-W1DlOsu0c7kE5o-5lRUdUJfzLfdN-N7uvhAP-qZphjVwXLqw7_7T6Hn90Uh0VyLndAh/pub?start=false&loop=false&delayms=3000)
+
 ### 7/25
 #### In Class
+*講義: [7/25](https://docs.google.com/presentation/d/e/2PACX-1vSzngDJuRE8e5nuP_f8muXnSXuKQPVqmVCT2y41lmqnBw6btgm1kC8OL9WH7FjbiFm4kIKkdWxu8as7/pub?start=false&loop=false&delayms=3000&slide=id.p)
+
+1. 修改簡報
+2. 簡報報告
+
 #### At Home
