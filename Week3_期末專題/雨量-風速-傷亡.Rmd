@@ -55,7 +55,7 @@ rh2$cas.total <- as.numeric(rh2$cas.total)
 
 ```
 
-##整理路徑
+## 整理路徑
 ```{r}
 
 colnames(sp1)[1]="name"

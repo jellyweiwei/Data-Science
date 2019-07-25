@@ -75,7 +75,7 @@
 
 ### 7/25
 #### In Class
-*講義: [7/25](https://docs.google.com/presentation/d/e/2PACX-1vSzngDJuRE8e5nuP_f8muXnSXuKQPVqmVCT2y41lmqnBw6btgm1kC8OL9WH7FjbiFm4kIKkdWxu8as7/pub?start=false&loop=false&delayms=3000&slide=id.p)
+*講義: 無
 
 1. 修改簡報
 2. 簡報報告
